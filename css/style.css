@@ -1,0 +1,26 @@
+body {
+    background-image: url("../img/background_home.jpg");
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
+}/* Center Button*/
+#login .btn{
+   background-color:rgb(31, 31, 31);
+   color: white;
+   border-radius: 25px;
+   height: 50px;
+   width: 400px;
+}/* Center Rounded Form*/
+.form-rounded {
+    border-radius: 4rem;
+    height: 50px;
+    width: 400px;
+
+}/* Header Title*/
+h2{
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
