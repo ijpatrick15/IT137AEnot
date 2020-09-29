@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- JQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!--External CSS-->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--Title page and Logo-->  
+  <title>SIAS Online - Register</title>
+    <link rel="icon" href="../img/Logo_of_Bukidnon_State_University.png"> 
+  </head>
+
+    <body>         
+    <!-- Navigation Bar-->
+  <nav class="navbar navbar-light bg-light"> <a class="navbar-brand" href="index.html">
+    <img src="../img/Logo_of_Bukidnon_State_University.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    SIAS Online 
+  </a>
+</nav>
+        <!-- Form Container -->
+      <div id="register"><br><br>
+        <div class="container-fluid">
+            <div id="register-row" class="row justify-content-center align-items-center">
+                <div id="register-column" class="col-md-6">
+                <div id="register-box" class="col-md-12">
+                      <!-- Form Start-->
+                        <form id="register-form" class="form" action="" method="post">
+                          <center> <!--Logo on Center-->
+                  
+                            <h2> Create an account</h2> 
+                                    <!--User ID-->
+                            <div class="form-group">
+                                <input type="text" name="userid" id="userid" class="form-control form-rounded" placeholder="User ID">
+                            </div>
+                                    <!--First Name-->
+                            <div class="form-group">
+                                <input type="text" name="firstname" id="firstname" class="form-control form-rounded" placeholder="First Name">
+                            </div>
+                                    <!--Middle Name-->
+                            <div class="form-group">
+                              <input type="text" name="middlename" id="middlename" class="form-control form-rounded" placeholder="Middle Name">
+                          </div>
+                                     <!--Last Name-->
+                           <div class="form-group">
+                            <input type="text" name="lastname" id="lastname" class="form-control form-rounded" placeholder="Last Name">
+                        </div>
+                             <div class="form-group">       <!--Password-->
+                          <input type="password" name="password" id="password"  placeholder="Enter the password">
+                           <i class="far fa-eye" id="togglePassword"></i>
+                          </div>
+                             <div class="form-group">       <!-- Confirm Password-->    
+                          <input type="password" name="repassword" id="repassword" placeholder="Re-type Password">
+                          <i class="far fa-eye" id="togglerePassword"></i>
+                        </div>
+                                  <!--Create account Button-->   
+                          <div class="form-group">
+                            <button type="button" onclick="checkmissingfields_register()" id="registerbtn" class="btn btn-sucess btn-lg btn-block" >Register</button>
+                            </div>
+                            <!--Forgot Password-->
+                            <a href="index.html"  class="text-white bg-dark " >Back to home</a><br><br>
+
+                          
+                              </center><br>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+<script> 
+
+
+
+// -- Eye toggle codes --
+const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+  togglePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      // toggle the eye slash icon
+      this.classList.toggle('fa-eye-slash');
+    });
+  const togglerePassword = document.querySelector('#togglerePassword');
+  const repassword = document.querySelector('#repassword');
+  togglerePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      const type = repassword.getAttribute('type') === 'password' ? 'text' : 'password';
+      repassword.setAttribute('type', type);
+      // toggle the eye slash icon
+      this.classList.toggle('fa-eye-slash');
+  });
+  
+
+// -- field retype password --
+$ ("#registerbtn").click(function(){
+  let userid = $("#userid").val();
+  let firstname = $("#firstname").val();
+  let middlename = $("#middlename").val();
+  let lastname = $("#lastname").val();
+  let password = $("#password").val();
+  let repassword = $("#repassword").val();
+
+
+  if (password === repassword){
+    alert
+           ("ACCOUNT INFO"  +"\n"
+            +"\n"
+            +"User ID:   "+userid +"\n"
+            +"First Name:   " +firstname+"\n"
+            +"Middle Name:   " +middlename+ "\n"
+            +"Last Name:   " + lastname +"\n"
+            +"Password:   " +password +"\n");
+             
+  }else {
+    alert("ERROR! "  +"\n"
+            +"\n"
+            +"Password mismatched!" +"\n"
+            +"Please try again.");
+
+  }
+  });
+  </script>
+  </body>
+
+
+  </html>
